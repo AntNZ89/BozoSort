@@ -3,6 +3,14 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) {
 
+        bozoSort();
+
+    }
+
+
+
+    public static void bozoSort(){
+
         Random random = new Random();
 
         double[] array = new double[10];
@@ -23,20 +31,7 @@ public class Main {
 
         while (true){
 
-            correctCount = 0;
-
-            for (int c = 0 ; c < array.length ; c++){
-
-                if (c < array.length-1){
-                    if (array[c] < array[c+1]){
-
-                        correctCount++;
-
-                    }
-                }
-            }
-
-            if (correctCount == array.length-1){
+            if (isSorted(array)){
                 break;
             }
 
@@ -51,16 +46,38 @@ public class Main {
             array[num1] = numA2;
             array[num2] = numA1;
 
-
-
         }
 
         System.out.println(getArrayToString(array));
-
         System.out.println("It took " + count + " swaps");
 
     }
-    
+
+    public static boolean isSorted(double[] array){
+
+        boolean isTrue = false;
+
+        int correctCount = 0;
+
+        for (int c = 0 ; c < array.length ; c++){
+
+            if (c < array.length-1){
+                if (array[c] < array[c+1]){
+
+                    correctCount++;
+
+                }
+            }
+        }
+
+        if (correctCount == array.length-1){
+            isTrue = true;
+        }
+
+        return isTrue;
+
+    }
+
     public static String getArrayToString(double[] array){
 
         String s = "[";
