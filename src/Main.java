@@ -25,15 +25,6 @@ public class Main {
 
             correctCount = 0;
 
-            num1 = random.nextInt(0,10);
-            num2 = random.nextInt(0,10);
-
-            numA1 = array[num1];
-            numA2 = array[num2];
-
-            array[num1] = numA2;
-            array[num2] = numA1;
-
             for (int c = 0 ; c < array.length ; c++){
 
                 if (c < array.length-1){
@@ -50,6 +41,17 @@ public class Main {
             }
 
             count++;
+
+            num1 = random.nextInt(0,10);
+            num2 = random.nextInt(0,10);
+
+            numA1 = array[num1];
+            numA2 = array[num2];
+
+            array[num1] = numA2;
+            array[num2] = numA1;
+
+
 
         }
 
